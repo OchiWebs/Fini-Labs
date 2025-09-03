@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Welcome to the IDOR Testing Ground{% endblock %}
+{% block content %}
+<div class="hero">
+    <h1>Welcome to the IDOR Testing Ground</h1>
+    <p class="lead">A secure environment to understand and test for Insecure Direct Object Reference vulnerabilities.</p>
+    {% if not current_user.is_authenticated %}
+    <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg mt-3">Get Started & Login</a>
+    {% else %}
+    <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg mt-3">Go to Your Dashboard</a>
+    {% endif %}
+</div>
+
+<div class="explanation-section">
+    <h2>What is IDOR? 🤔</h2>
+    <p><strong>Insecure Direct Object Reference (IDOR)</strong> is a type of access control vulnerability that arises when an application uses user-supplied input to access objects directly.</p>
+    <p>Imagine a website where you can view your profile at <code>/profile/123</code>. An IDOR vulnerability would exist if you could change the ID to <code>/profile/124</code> and see another user's profile without being authorized.</p>
+    <hr class="my-4">
+    <h3>How Attackers Exploit IDOR</h3>
+    <ul>
+        <li><strong>URL Tampering:</strong> The attacker modifies parameters in the URL.</li>
+        <li><strong>Body Manipulation:</strong> The attacker modifies hidden form fields or API request bodies.</li>
+        <li><strong>Guessing IDs:</strong> IDs are often sequential numbers (1, 2, 3...), making it easy for an attacker to guess valid IDs of other objects.</li>
+    </ul>
+</div>
+{% endblock %}

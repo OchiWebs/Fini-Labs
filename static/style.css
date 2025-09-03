@@ -1,0 +1,60 @@
+/* General & Typography */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+}
+h1, h2, h3 { font-weight: 300; color: #2c3e50; }
+a { color: #007bff; text-decoration: none; transition: color 0.3s ease; }
+a:hover { color: #0056b3; text-decoration: none; }
+
+/* Navigation Bar */
+.navbar { box-shadow: 0 2px 4px rgba(0,0,0,.1); background-color: #ffffff !important; }
+.navbar-brand { font-weight: 600; color: #343a40 !important; }
+.nav-link { color: #555 !important; }
+.btn-login, .btn-logout { border-radius: 20px; padding: 8px 20px; font-weight: 600; color: white !important;}
+.btn-login { background-color: #28a745; border-color: #28a745; }
+.btn-logout { background-color: #dc3545; border-color: #dc3545; }
+
+/* Main Container & Cards */
+.main-container { padding-top: 80px; padding-bottom: 40px; }
+.card {
+    border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+.card-header {
+    background-color: #3498db; color: white; font-weight: 600;
+    border-top-left-radius: 12px; border-top-right-radius: 12px;
+    padding: 1rem 1.5rem;
+}
+.card-body { padding: 1.5rem; }
+
+/* Homepage / Welcome Page */
+.hero {
+    text-align: center; padding: 4rem 2rem; background-color: #ffffff;
+    border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.hero h1 { font-size: 3rem; font-weight: 500; color: #343a40; }
+.hero p.lead { font-size: 1.25rem; color: #6c757d; }
+.explanation-section { background-color: #fff; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.explanation-section h2 { border-bottom: 2px solid #007bff; padding-bottom: 10px; margin-bottom: 20px; }
+
+/* Login Form */
+.login-form-container {
+    background: #ffffff; padding: 3rem; border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); max-width: 500px; margin: 2rem auto;
+}
+.btn-primary {
+    border-radius: 20px; padding: 10px 20px; font-weight: 600;
+    background-color: #007bff; border-color: #007bff;
+    width: 100%; margin-top: 1rem;
+}
+
+/* Dashboard Specifics */
+.list-group-item { border: none; padding-left: 0; }
+.admin-view {
+    border-left: 4px solid #17a2b8; padding-left: 20px; margin-top: 2rem;
+    background-color: #f1f9fa; padding: 20px; border-radius: 8px;
+}

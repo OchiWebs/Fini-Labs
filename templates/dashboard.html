@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    <h1 class="mb-4">Dashboard</h1>
+    <p class="lead">Welcome, {{ current_user.username }}!</p>
+
+    <div class="card">
+        <div class="card-header">Your Secret Notes</div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                {% for note in current_user.notes %}
+                    <li class="list-group-item">"{{ note.content[:40] }}..." - <a href="{{ url_for('edit_note', note_id=note.id) }}">Edit</a></li>
+                {% else %}
+                    <li class="list-group-item">You have no secret notes.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    {% if current_user.role == 'admin' %}
+        <div class="admin-view mt-5">
+            <h2 class="mb-4">Admin View</h2>
+            <div class="row">
+                <div class="col-md-6">
+                     <div class="card">
+                        <div class="card-header">All Users</div>
+                        <div class="card-body">
+                           <ul class="list-group list-group-flush">
+                            {% for user in users %}
+                                <li class="list-group-item"><a href="{{ url_for('profile', user_id=user.id) }}">{{ user.username }}</a> (ID: {{ user.id }})</li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">All Projects</div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                            {% for project in projects %}
+                                <li class="list-group-item"><a href="{{ url_for('project_detail', project_id=project.id) }}">{{ project.name }}</a></li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
