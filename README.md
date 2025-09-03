@@ -19,8 +19,8 @@ Metode ini adalah cara yang paling sederhana dan andal karena menggunakan Docker
 1.  **Clone Repositori**
     Salin repositori ini ke mesin lokal Anda menggunakan Git.
     ```bash
-    git clone <URL_REPOSITORI_ANDA>
-    cd <nama-direktori-repositori>
+    git clone https://github.com/OchiWebs/Fini-Labs.git
+    cd Fini-Labs-Main
     ```
 
 2.  **Build dan Jalankan dengan Docker Compose**
@@ -92,5 +92,6 @@ Database secara otomatis diisi dengan dua pengguna untuk memungkinkan Anda mende
 * **Pengguna "Attacker"**
     * **Username**: `atacker`
     * **Password**: `password123`
+
 
 **Misi Anda**: Masuk sebagai pengguna `atacker` dan coba akses atau ubah sumber daya (seperti proyek atau catatan) milik pengguna `admin` dengan cara memanipulasi nilai ID di URL browser Anda.
